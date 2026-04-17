@@ -1,0 +1,265 @@
+/* --------------------- Open Props --------------------------- */
+
+/* the props */
+@import "https://unpkg.com/open-props";
+
+/* optional imports that use the props */
+@import "https://unpkg.com/open-props/normalize.min.css";
+
+/* ------------------------------------------------------------ */
+
+body {
+  font-family: sans-serif;
+  text-align: center;
+  background-color: #404040;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 64px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.pane {
+  background-color: #e0e0e0;
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.subpane {
+  background-color: #d0d0d0;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.register-value {
+  background-color: #202020;
+  color: orange;
+  font-family: monospace;
+  border-radius: 4px;
+  padding: 0px 8px 0px 8px;
+  display: block;
+  text-align: left;
+  font-size: 2em
+}
+
+.register-label {
+  font-weight: 900;
+  font-size: 2em;
+}
+
+.register {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+}
+
+.terminal {
+  background-color: #ffffc0;
+  font-family: monospace;
+  border-radius: 4px;
+  padding: 8px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3) inset;
+  height: 640px;
+  text-align: left;
+  white-space: pre;
+  overflow-y: scroll;
+  text-wrap-mode: wrap;
+  overflow-wrap: anywhere;
+
+  display: grid;
+  grid-template-columns: repeat(72, 1ch);
+  grid-auto-rows: 1em;
+  line-height: 1;
+  gap: 0px;
+
+}
+
+.memory-container {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.memory-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3) inset;
+
+  pointer-events: none;
+  border-radius: inherit;
+  z-index: 2;
+}
+
+.memory {
+  background-color: #ffffff;
+  font-family: monospace;
+  text-align: left;
+  white-space: pre;
+  overflow-y: scroll;
+  max-height: 640px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.editor {
+  all: revert;
+  resize: none;
+  font-family: monospace;
+  border-radius: 4px;
+  padding: 8px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3) inset;
+  height: 640px;
+  text-align: left;
+  white-space: pre;
+  overflow-y: scroll;
+  text-wrap-mode: wrap;
+  overflow-wrap: anywhere;
+  line-height: 1;
+}
+
+.editor:focus {
+  outline: none;
+}
+
+.action-button {
+  background-color: #0090ff;
+  color: white;
+  font-weight: 900;
+  border-radius: 4px;
+}
+
+.action-button:hover {
+  background-color: #0070e0;
+}
+
+.action-button:active {
+  background-color: #0050c0;
+}
+
+table {
+  all: revert;
+  border-collapse: collapse;
+  font-size: 1.25em;
+}
+
+tr {
+  all: revert;
+}
+
+thead {
+  all: revert;
+  position: sticky;
+  top: -1px;
+  background-color: #f1f1f1;
+  z-index: 1;
+}
+
+th[scope="row"] {
+  all: revert;
+  padding: 0ch 1ch 0ch 1ch;
+  background-color: #f1f1f1;
+}
+
+th,
+td {
+  all: revert;
+  padding: 0ch 0.5ch 0ch 0.5ch;
+  text-wrap-mode: nowrap;
+  border: 1px solid #eee;
+}
+
+.memory_p_register {
+  background-color: #c4ffdc;
+}
+
+button {
+  border-style: solid;
+  border-width: 0;
+}
+
+.toggle {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-on {
+  background-color: #0090ff;
+  color: white;
+  font-weight: 900;
+  font-size: 2em;
+}
+
+.toggle-on:hover {
+  background-color: #0070e0;
+}
+
+.toggle-on:active {
+  background-color: #0050c0;
+}
+
+
+.toggle-off {
+  font-weight: 900;
+  font-size: 2em;
+}
+
+.toggle-off:hover {
+  background-color: #e0e0e0;
+}
+
+.toggle-off:active {
+  background-color: #c0c0c0;
+}
+
+.toggle-red {
+  background-color: #ff0000;
+  color: white;
+  font-weight: 900;
+  font-size: 2em;
+}
+
+.toggle-red:hover {
+  background-color: #e00000;
+}
+
+.toggle-red:active {
+  background-color: #c00000;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-align: center;
+  margin: 0 auto;
+  padding: 2rem;
+}
