@@ -6,7 +6,7 @@ These rust-based tools were inspired by the emulator and assembler [originally w
 
 For more information about the computer and details about programming it, please refer to the scanned manuals on [bitsavers](http://www.bitsavers.org/pdf/univac/military/1219/).
 
-## For more information on this project, see the video [here]()
+## For more information on this project, see the video [here](https://www.youtube.com/watch?v=rU8sCbwB8XU)
 
 ![Screenshot](images/Web_Screenshot.png)
 
