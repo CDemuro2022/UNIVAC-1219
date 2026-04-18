@@ -4,6 +4,8 @@ This is an assembler and emulator for the UNIVAC 1219 computer at the [InfoAge m
 
 These rust-based tools were inspired by the emulator and assembler [originally written](https://archive.org/details/univac-1219-emulator) by Duane B. Craps. The goals of this project are improved speed, more accurate emulation, and a simplified coding experience.
 
+The C toolchain and C programs can be found [here](https://github.com/nathanfarlow/univac-1219-riscv).
+
 For more information about the computer and details about programming it, please refer to the scanned manuals on [bitsavers](http://www.bitsavers.org/pdf/univac/military/1219/).
 
 ## For more information on this project, see the video [here](https://www.youtube.com/watch?v=rU8sCbwB8XU)
