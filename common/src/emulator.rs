@@ -192,7 +192,7 @@ impl State {
 
                 self.compare = true;
                 self.equal = al_signed == val_signed;
-                self.greater = al_signed > val_signed;
+                self.greater = al_signed >= val_signed;
             }
             Instruction::SLSU { y } => {
                 let mask = self.au;
