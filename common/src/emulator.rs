@@ -627,7 +627,7 @@ impl State {
                 self.sr = u5::try_from(k).unwrap();
             }
             Instruction::STOP { k } => {
-                if k & self.stop != u6::new(0) {
+                if (k & self.stop != u6::new(0))  || (k >= u6::new(0b100000)) {
                     self.stopped = k & self.stop;
                     self.running = false;
                     logger!("\nSTOPPED: {:06b}", self.stopped);
