@@ -18,12 +18,13 @@ pub enum Mode {
 impl TryFrom<u18> for Mode {
     type Error = String;
 
+    // TODO: Refactor this to keep track of proper state of I/O devices
     fn try_from(value: u18) -> Result<Self, Self::Error> {
         match u32::from(value) {
-            9 => Ok(Mode::TermOutput),
-            11 => Ok(Mode::TermOutput),
-            25 => Ok(Mode::TermInput),
-            105 => Ok(Mode::TapeInput),
+            0b1001 => Ok(Mode::TermOutput),
+            0b1011 => Ok(Mode::TermOutput),
+            0b11001 => Ok(Mode::TermInput),
+            1101001 => Ok(Mode::TapeInput),
             _ => Err(format!("Unknown External Function {}", value)),
         }
     }
