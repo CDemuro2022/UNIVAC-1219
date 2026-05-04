@@ -24,7 +24,7 @@ impl TryFrom<u18> for Mode {
             0b1001 => Ok(Mode::TermOutput),
             0b1011 => Ok(Mode::TermOutput),
             0b11001 => Ok(Mode::TermInput),
-            1101001 => Ok(Mode::TapeInput),
+            0b1101001 => Ok(Mode::TapeInput),
             _ => Err(format!("Unknown External Function {}", value)),
         }
     }
