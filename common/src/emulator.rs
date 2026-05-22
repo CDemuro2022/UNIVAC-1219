@@ -50,8 +50,8 @@ impl fmt::Debug for State {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(
             f,
-            "P: {:0>6o} AU: {:0>6o} AL: {:0>6o} ICR: {:0>1o} SR: {:0>5b}",
-            self.p, self.au, self.al, self.icr, self.sr
+            "P: {:0>6o} AU: {:0>6o} AL: {:0>6o} ICR: {:0>1o} B: {:0>6o} SR: {:0>5b}",
+            self.p, self.au, self.al, self.icr, self.get_b(), self.sr
         )
     }
 }
@@ -382,6 +382,9 @@ impl State {
                     self.p = self.p_addr(y);
                     return;
                 }
+                self.compare = compare;
+                self.greater = greater;
+                self.equal = equal;
             }
             Instruction::JPALZ { y } => {
                 let do_jump = if compare {
@@ -394,6 +397,9 @@ impl State {
                     self.p = self.p_addr(y);
                     return;
                 }
+                self.compare = compare;
+                self.greater = greater;
+                self.equal = equal;
             }
             Instruction::JPAUNZ { y } => {
                 let do_jump = if compare {
@@ -406,6 +412,9 @@ impl State {
                     self.p = self.p_addr(y);
                     return;
                 }
+                self.compare = compare;
+                self.greater = greater;
+                self.equal = equal;
             }
             Instruction::JPALNZ { y } => {
                 let do_jump = if compare {
@@ -418,6 +427,9 @@ impl State {
                     self.p = self.p_addr(y);
                     return;
                 }
+                self.compare = compare;
+                self.greater = greater;
+                self.equal = equal;
             }
             Instruction::JPAUP { y } => {
                 let do_jump = if compare {
@@ -430,6 +442,9 @@ impl State {
                     self.p = self.p_addr(y);
                     return;
                 }
+                self.compare = compare;
+                self.greater = greater;
+                self.equal = equal;
             }
             Instruction::JPALP { y } => {
                 let do_jump = if compare {
@@ -442,6 +457,9 @@ impl State {
                     self.p = self.p_addr(y);
                     return;
                 }
+                self.compare = compare;
+                self.greater = greater;
+                self.equal = equal;
             }
             Instruction::JPAUNG { y } => {
                 let do_jump = if compare {
@@ -454,6 +472,9 @@ impl State {
                     self.p = self.p_addr(y);
                     return;
                 }
+                self.compare = compare;
+                self.greater = greater;
+                self.equal = equal;
             }
             Instruction::JPALNG { y } => {
                 let do_jump = if compare {
@@ -466,6 +487,9 @@ impl State {
                     self.p = self.p_addr(y);
                     return;
                 }
+                self.compare = compare;
+                self.greater = greater;
+                self.equal = equal;
             }
             Instruction::ENTALK { u } => {
                 self.al = arith::sign_extend_12_to_18(u);
