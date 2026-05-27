@@ -194,6 +194,17 @@ impl State {
                 self.equal = al_signed == val_signed;
                 self.greater = al_signed >= val_signed;
             }
+            Instruction::CMALB { y } => {
+                let val = self.read(self.local_addr(y) + self.get_b());
+
+                // Convert both values to signed for proper comparison
+                let al_signed = arith::ones_to_signed_18(self.al);
+                let val_signed = arith::ones_to_signed_18(val);
+
+                self.compare = true;
+                self.equal = al_signed == val_signed;
+                self.greater = al_signed >= val_signed;
+            }
             Instruction::SLSU { y } => {
                 let mask = self.au;
                 let mem = self.read(self.local_addr(y));
